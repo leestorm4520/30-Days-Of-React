@@ -1,210 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Roboto:300,400,500&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Roboto:300,400,500&display=swap"
+        rel="stylesheet" />
 
     <title>30 Days Of React Challenge</title>
     <style>
-      /* == General style === */
-      * {
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0;
-        text-align: center;
-      }
+        /* == General style === */
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
 
-      html,
-      body {
-        height: 100%;
-        line-height: 1.5;
-        font-family: 'Montserrat';
-        font-weight: 300;
-        color: black;
-      }
+        html,
+        body {
+            height: 100%;
+            line-height: 1.5;
+            font-family: 'Montserrat';
+            font-weight: 300;
+            color: black;
+        }
 
-      .root {
-        min-height: 100%;
-        position: relative;
-      }
+        .root {
+            min-height: 100%;
+            position: relative;
+        }
 
-      .header-wrapper,
-      .main-wrapper,
-      .footer-wrapper {
-        width: 85%;
-        margin: auto;
-      }
+        .header-wrapper,
+        .main-wrapper,
+        .footer-wrapper {
+            width: 85%;
+            margin: auto;
+        }
 
-      .header-wrapper,
-      .main-wrapper {
-        padding: 10px;
-        margin: 2px auto;
-      }
+        .header-wrapper,
+        .main-wrapper {
+            padding: 10px;
+            margin: 2px auto;
+        }
 
-      main{
-        font-size:20px;
-        padding: 10px;
-        background-color: aquamarine;
-      }
+        main {
+            font-size: 20px;
+            padding: 10px;
+            background-color: aquamarine;
+        }
 
-      h1 {
-        font-size: 70px;
-        font-weight: 300;
-      }
+        h1 {
+            font-size: 70px;
+            font-weight: 300;
+        }
 
-      h2,
-      h3 {
-        font-weight: 300;
-      }
+        h2,
+        h3 {
+            font-weight: 300;
+        }
 
-      header {
-        background-color: #61dbfb;
-        padding: 10px;
-      }
+        header {
+            background-color: #61dbfb;
+            padding: 10px;
+        }
 
-      main {
-        padding: 10px 10px 60px;
-        /* Height of the footer */
-      }
+        main {
+            padding: 10px 10px 60px;
+            /* Height of the footer */
+        }
 
-      ul {
-        margin-left: 15px;
-      }
+        ul {
+            margin-left: 15px;
+        }
 
-      ul li {
-        list-style: none;
-      }
+        ul li {
+            list-style: none;
+        }
 
-      footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 60px;
-        /* Height of the footer */
-        background: #6cf;
-      }
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            /* Height of the footer */
+            background: #6cf;
+        }
 
-      
 
-      .footer-wrapper {
-        font-weight: 400;
-        text-align: center;
-        line-height: 60px;
-      }
+
+        .footer-wrapper {
+            font-weight: 400;
+            text-align: center;
+            line-height: 60px;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="root"></div>
 
-    <script
-      crossorigin
-      src="https://unpkg.com/react@16/umd/react.development.js"
-    ></script>
-    <script
-      crossorigin
-      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
-    ></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-      // To get the root element from the HTML document
-      const rootElement = document.querySelector('.root')
-      // JSX element, header
-      const welcome = 'Welcome to 30 Days Of React'
-      const title = 'Getting Started React'
-      const subtitle = 'JavaScript Library'
-      const author = {
-        firstName: 'Asabeneh',
-        lastName: 'Yetayeh',
-      }
-      const date = 'Oct 2, 2020'
+        // To get the root element from the HTML document
+        const rootElement = document.querySelector('.root')
+        // JSX element, header
+        const welcome = 'Welcome to 30 Days Of React'
+        const title = 'Getting Started React'
+        const subtitle = 'JavaScript Library'
+        const author = {
+            firstName: 'Asabeneh',
+            lastName: 'Yetayeh',
+        }
+        const date = 'Oct 2, 2020'
 
-      // JSX element, header
-      const header = (
-        <header>
-          <div className='header-wrapper'>
-            <h1>{welcome}</h1>
-            <h2>{title}</h2>
-            <h3>{subtitle}</h3>
+        // JSX element, header
+        const header = (
+            <header>
+                <div className='header-wrapper'>
+                    <h1>{welcome}</h1>
+                    <h2>{title}</h2>
+                    <h3>{subtitle}</h3>
+                    <p>
+                        Instructor: {author.firstName} {author.lastName}
+                    </p>
+                    <small>Date: {date}</small>
+                </div>
+            </header>
+        )
+
+        const nameStudent = "John Le"
+        const experienceYears = [1, 1]
+        const subjects = ['Web Development', 'Data Science'];
+        const results=()=>{
+            for (var i = 0; i < 2; i++) {
+            results.push(`has ${experienceYears[i]} in ${subject[i]}`);
+        }    
+        }   
+
+        var studentExe = results.map((result)=> <li key={result}>{result}</li>);
+
+
+
+
+        const result = (
             <p>
-              Instructor: {author.firstName} {author.lastName}
+                {nameStudent} <br />{studentExe}
             </p>
-            <small>Date: {date}</small>
-          </div>
-        </header>
-      )
+        )
 
-      const nameStudent="John Le"
-      const experienceYears=[1,1]
-      const subjects=['Web Development','Data Science'];
-      const studentExe=<li>has {experienceYears} in {subjects}</li>;
-        
-      
-
-      const result = (
-        <p>
-          {nameStudent} <br/>{studentExe}
-        </p>
-      )
-
-      const yearBorn = 1820
-      const currentYear = new Date().getFullYear()
-      const age = currentYear - yearBorn
-      const personAge = (
-        <p>
-          {' '}
-          {author.firstName} {author.lastName} is {age} years old
-        </p>
-      )
-
-      // JSX element, main
-      const techs = ['HTML', 'CSS', 'JavaScript']
-      const techsFormatted=techs.map((tech)=><li key={tech}>{tech}</li>)
-
-      // JSX element, main
-      const main = (
-        <main>
-          <div className='main-wrapper'>
+        const yearBorn = 1820
+        const currentYear = new Date().getFullYear()
+        const age = currentYear - yearBorn
+        const personAge = (
             <p>
-              Prerequisite to get started{' '}
-              <strong>
-                <em>react.js</em>
-              </strong>
-              :
+                {' '}
+                {author.firstName} {author.lastName} is {age} years old
             </p>
-            <ul>{techsFormatted}</ul>
-            {result}
-            {personAge}
-          </div>
-        </main>
-      )
+        )
 
-      const copyRight = 'Copyright 2020'
+        // JSX element, main
+        const techs = ['HTML', 'CSS', 'JavaScript']
+        const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
 
-      // JSX element, footer
-      const footer = (
-        <footer>
-          <div className='footer-wrapper'>
-            <p>{copyRight}</p>
-          </div>
-        </footer>
-      )
+        // JSX element, main
+        const main = (
+            <main>
+                <div className='main-wrapper'>
+                    <p>
+                        Prerequisite to get started{' '}
+                        <strong>
+                            <em>react.js</em>
+                        </strong>
+                        :
+                    </p>
+                    <ul>{techsFormatted}</ul>
+                    {result}
+                    {personAge}
+                </div>
+            </main>
+        )
 
-      // JSX element, app
-      const app = (
-        <div className='app'>
-          {header}
-          {main}
-          {footer}
-        </div>
-      )
+        const copyRight = 'Copyright 2020'
 
-      // we render the JSX element using the ReactDOM package
-      ReactDOM.render(app, rootElement)
+        // JSX element, footer
+        const footer = (
+            <footer>
+                <div className='footer-wrapper'>
+                    <p>{copyRight}</p>
+                </div>
+            </footer>
+        )
+
+        // JSX element, app
+        const app = (
+            <div className='app'>
+                {header}
+                {main}
+                {footer}
+            </div>
+        )
+
+        // we render the JSX element using the ReactDOM package
+        ReactDOM.render(app, rootElement)
     </script>
-  </body>
+</body>
+
 </html>
