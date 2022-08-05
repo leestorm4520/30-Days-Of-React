@@ -1,41 +1,98 @@
-//index.js
-// importing the react and react-dom package
+
+//Welcome to React Template
+/*
 import React from 'react'
 import ReactDOM from 'react-dom'
+import corgi from './images/corgi.webp'
+// To get the root element from the HTML document
+
+// JSX element, header
+const welcome = 'Welcome to 30 Days Of React'
+const title = 'Getting Started React'
+const subtitle = 'JavaScript Library'
+const author = {
+  firstName: 'Asabeneh',
+  lastName: 'Yetayeh',
+}
+const date = 'Oct 2, 2020'
 
 // JSX element, header
 const header = (
   <header>
-    <h1>Welcome to 30 Days Of React</h1>
-    <h2>Getting Started React</h2>
-    <h3>JavaScript Library</h3>
-    <p>Asabeneh Yetayeh</p>
-    <small>Oct 2, 2020</small>
+    <div className='header-wrapper'>
+      <h1>{welcome}</h1>
+      <h2>{title}</h2>
+      <h3>{subtitle}</h3>
+      <p>
+        Instructor: {author.firstName} {author.lastName}
+      </p>
+      <small>Date: {date}</small>
+    </div>
   </header>
 )
 
+const numOne = 3
+const numTwo = 2
+
+const result = (
+  <p>
+    {numOne} + {numTwo} = {numOne + numTwo}
+  </p>
+)
+
+const yearBorn = 1820
+const currentYear = new Date().getFullYear()
+const age = currentYear - yearBorn
+const personAge = (
+  <p>
+    {' '}
+    {author.firstName} {author.lastName} is {age} years old
+  </p>
+)
+
+// JSX element, main
+const techs = ['HTML', 'CSS', 'JavaScript']
+const techsFormatted = techs.map((tech) => <li>{tech}</li>)
+const corgiImg=(
+  <div>
+    <img src={corgi} alt='corgiImage'/>
+  </div>
+)
 // JSX element, main
 const main = (
   <main>
-    <p>Prerequisite to get started react.js:</p>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
+    <div className='main-wrapper'>
+      <p>
+        Prerequisite to get started{' '}
+        <strong>
+          <em>react.js</em>
+        </strong>
+        :
+      </p>
+      <ul>{techsFormatted}</ul>
+      {result}
+      {personAge}
+      {corgiImg}
+    </div>
   </main>
 )
+
+
+
+const copyRight = 'Copyright 2020'
 
 // JSX element, footer
 const footer = (
   <footer>
-    <p>Copyright 2020</p>
+    <div className='footer-wrapper'>
+      <p>{copyRight}</p>
+    </div>
   </footer>
 )
 
-// JSX element, app, a container or a parent
+// JSX element, app
 const app = (
-  <div>
+  <div className='app'>
     {header}
     {main}
     {footer}
@@ -44,7 +101,46 @@ const app = (
 
 const rootElement = document.getElementById('root')
 // we render the JSX element using the ReactDOM package
-// ReactDOM has the render method and the render method takes two argument
 ReactDOM.render(app, rootElement)
-// or
-//  ReactDOM.render([header, main, footer], rootElement)
+*/
+
+//Front end Technologies
+import React from 'react'
+import ReactDOM from 'react-dom'
+import * as images from './images'
+
+const html=(
+  <div>
+    <img src={images.html} alt='html'/>
+  </div>
+)
+const css=(
+  <div>
+    <img src={images.css} alt='css'/>
+  </div>
+)
+const js=(
+  <div>
+    <img src={images.js} alt='js'/>
+  </div>
+)
+const react=(
+  <div>
+    <img src={images.js} alt='react'/>
+  </div>
+)
+
+const main=(
+  <main>
+    <h2>Front End Technologies</h2>
+    {html}
+    {css}
+    {js}
+    {react}
+  </main>
+)
+const app=(
+  <div>{main}</div>
+)
+const rootElement=document.getElementById('root');
+ReactDOM.render(app, rootElement)
