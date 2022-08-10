@@ -107,7 +107,7 @@ ReactDOM.render(app, rootElement)
 //Front end Technologies
 import React from 'react'
 import ReactDOM from 'react-dom'
-import * as images from './images'
+import images from './images'
 
 const html=(
   <div>
