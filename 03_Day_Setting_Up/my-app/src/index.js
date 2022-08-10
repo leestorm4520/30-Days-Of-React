@@ -105,42 +105,69 @@ ReactDOM.render(app, rootElement)
 */
 
 //Front end Technologies
+// import React from 'react'
+// import ReactDOM from 'react-dom'
+// import images from './images'
+
+// const html=(
+//   <div>
+//     <img src={images.html5} alt='html'/>
+//   </div>
+// )
+// const css=(
+//   <div>
+//     <img src={images.css} alt='css'/>
+//   </div>
+// )
+// const js=(
+//   <div>
+//     <img src={images.js} alt='js'/>
+//   </div>
+// )
+// const react=(
+//   <div>
+//     <img src={images.react} alt='react'/>
+//   </div>
+// )
+
+// const main=(
+//   <main>
+//     <h2>Front End Technologies</h2>
+//     {html}
+//     {css}
+//     {js}
+//     {react}
+//   </main>
+// )
+// const app=(
+//   <div>{main}</div>
+// )
+// const rootElement=document.getElementById('root');
+// ReactDOM.render(app, rootElement)
+
+//Subscribe Template
 import React from 'react'
 import ReactDOM from 'react-dom'
-import images from './images'
-
-const html=(
-  <div>
-    <img src={images.html} alt='html'/>
-  </div>
-)
-const css=(
-  <div>
-    <img src={images.css} alt='css'/>
-  </div>
-)
-const js=(
-  <div>
-    <img src={images.js} alt='js'/>
-  </div>
-)
-const react=(
-  <div>
-    <img src={images.js} alt='react'/>
-  </div>
-)
 
 const main=(
   <main>
-    <h2>Front End Technologies</h2>
-    {html}
-    {css}
-    {js}
-    {react}
+      <h1>SUBSCRIBE</h1>
+      <p>Sign up with your email address to receive news and updates</p>
+      <form>
+        <div>
+        <input type='text' id='fName' placeholder='First Name'></input>
+        <input type='text' id='lName' placeHolder='Last Name'></input>
+        <input type='email' id='email' placeHolder='Email'></input>
+        </div>
+        <div>
+          <button type='submit'>Submit</button>
+        </div>
+      </form>
+     
   </main>
-)
-const app=(
-  <div>{main}</div>
-)
+  
+);
+
+const app=(<div>{main}</div>)
 const rootElement=document.getElementById('root');
-ReactDOM.render(app, rootElement)
+ReactDOM.render(app, rootElement);
