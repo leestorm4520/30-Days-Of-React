@@ -1,4 +1,4 @@
-
+//////////////////////////////////////////////////////////////////////////////
 //Welcome to React Template
 /*
 import React from 'react'
@@ -104,6 +104,8 @@ const rootElement = document.getElementById('root')
 ReactDOM.render(app, rootElement)
 */
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
 //Front end Technologies
 // import React from 'react'
 // import ReactDOM from 'react-dom'
@@ -145,29 +147,63 @@ ReactDOM.render(app, rootElement)
 // const rootElement=document.getElementById('root');
 // ReactDOM.render(app, rootElement)
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////
 //Subscribe Template
+// import React from 'react'
+// import ReactDOM from 'react-dom'
+
+// const Main=()=>(
+//   <main>
+//       <h1>SUBSCRIBE</h1>
+//       <p>Sign up with your email address to receive news and updates</p>
+//       <form>
+//         <div>
+//         <input type='text' id='fName' placeholder='First Name'></input>
+//         <input type='text' id='lName' placeHolder='Last Name'></input>
+//         <input type='email' id='email' placeHolder='Email'></input>
+//         </div>
+//         <div>
+//           <button type='submit'>Submit</button>
+//         </div>
+//       </form>
+     
+//   </main>
+  
+// )
+
+// const App=()=>(
+//   <div className='app'>
+//     <Main/>
+//   </div>
+// )
+
+// const rootElement=document.getElementById('root');
+// ReactDOM.render(<App/>, rootElement);
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Random Colors
 import React from 'react'
 import ReactDOM from 'react-dom'
+const random=()=>{
+  let str='0123456789abcdef'
+  let color=''
+  for(let i=0;i<6;i++){
+    let index=Math.floor(Math.random()*str.length)
+    color+=str[index]
+  }
+  return '#'+color
+}
 
-const main=(
-  <main>
-      <h1>SUBSCRIBE</h1>
-      <p>Sign up with your email address to receive news and updates</p>
-      <form>
-        <div>
-        <input type='text' id='fName' placeholder='First Name'></input>
-        <input type='text' id='lName' placeHolder='Last Name'></input>
-        <input type='email' id='email' placeHolder='Email'></input>
-        </div>
-        <div>
-          <button type='submit'>Submit</button>
-        </div>
-      </form>
-     
-  </main>
-  
-);
+const Random=()=>(
+    <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+)
 
-const app=(<div>{main}</div>)
+const App=()=>(
+  <div className='app'>
+    <Random/>
+  </div>
+)
 const rootElement=document.getElementById('root');
-ReactDOM.render(app, rootElement);
+ReactDOM.render(<App/>,rootElement);
