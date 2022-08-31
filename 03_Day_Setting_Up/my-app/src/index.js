@@ -197,7 +197,14 @@ const random=()=>{
 }
 
 const Random=()=>(
+  <div>
     <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+    <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+    <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+    <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+    <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+  </div>
+
 )
 
 const App=()=>(
