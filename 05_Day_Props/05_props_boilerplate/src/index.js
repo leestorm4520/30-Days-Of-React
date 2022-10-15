@@ -115,12 +115,12 @@ const Footer = ({ copyRight }) => (
 // Functional Component
 const App = () => {
   const data = {
-    welcome: 'Welcome to 30 Days Of React',
-    title: 'Getting Started React',
+    welcome: 'I am on day 5th Y\'all',
+    title: 'Just start to learn reactjs again',
     subtitle: 'JavaScript Library',
     author: {
-      firstName: 'Asabeneh',
-      lastName: 'Yetayeh',
+      firstName: 'John',
+      lastName: 'Le',
     },
     date: new Date(), // date needs to be formatted to a human readable format
   }
