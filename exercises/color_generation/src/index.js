@@ -167,9 +167,9 @@ ReactDOM.render(app, rootElement)
 //           <button type='submit'>Submit</button>
 //         </div>
 //       </form>
-     
+
 //   </main>
-  
+
 // )
 
 // const App=()=>(
@@ -186,6 +186,7 @@ ReactDOM.render(app, rootElement)
 //Random Colors
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 const random=()=>{
   let str='0123456789abcdef'
   let color=''
@@ -196,20 +197,42 @@ const random=()=>{
   return '#'+color
 }
 
-const Random=()=>(
-  <div>
-    <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
-    <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
-    <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
-    <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
-    <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
-  </div>
+const ArrColor = ()=>{
+  const colors = []
+  for(let i=0; i<32; i++)
+  {
+    colors.push(random());
+  }
+  const counter =0;
+  const colorsDiv = colors.map((color)=>(
+    <div key={color} style={{backgroundColor:`${color}`}}>{color}</div>
+  ))
+  return colorsDiv
+}
 
-)
+// const Random=()=>(
+//   <div>
+//     <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+//     <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+//     <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+//     <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+//     <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+//   </div>
+
+// )
+
+const Course = () => (<h1>30 Days of React</h1>)
+const Title = () => ( <h2>Hexidecimal Color</h2>)
 
 const App=()=>(
   <div className='app'>
-    <Random/>
+    <div>
+      <Course/>
+      <Title/>
+    </div>
+    <div className='color'>
+      <ArrColor/>
+    </div>
   </div>
 )
 const rootElement=document.getElementById('root');
