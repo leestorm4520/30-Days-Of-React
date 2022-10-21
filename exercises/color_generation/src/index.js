@@ -184,56 +184,109 @@ ReactDOM.render(app, rootElement)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Random Colors
-import React from 'react'
-import ReactDOM from 'react-dom'
+// import React from 'react'
+// import ReactDOM from 'react-dom'
 
-const random=()=>{
-  let str='0123456789abcdef'
-  let color=''
-  for(let i=0;i<6;i++){
-    let index=Math.floor(Math.random()*str.length)
-    color+=str[index]
-  }
-  return '#'+color
-}
+// const random=()=>{
+//   let str='0123456789abcdef'
+//   let color=''
+//   for(let i=0;i<6;i++){
+//     let index=Math.floor(Math.random()*str.length)
+//     color+=str[index]
+//   }
+//   return '#'+color
+// }
 
-const ArrColor = ()=>{
-  const colors = []
-  for(let i=0; i<32; i++)
-  {
-    colors.push(random());
-  }
-  const counter =0;
-  const colorsDiv = colors.map((color)=>(
-    <div key={color} style={{backgroundColor:`${color}`}}>{color}</div>
-  ))
-  return colorsDiv
-}
+// const ArrColor = ()=>{
+//   const colors = []
+//   for(let i=0; i<32; i++)
+//   {
+//     colors.push(random());
+//   }
+//   const colorsDiv = colors.map((color)=>(
+//     <div key={color} style={{backgroundColor:`${color}`}}>{color}</div>
+//   ))
+//   return colorsDiv
+// }
 
-// const Random=()=>(
-//   <div>
-//     <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
-//     <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
-//     <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
-//     <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
-//     <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+// // const Random=()=>(
+// //   <div>
+// //     <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+// //     <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+// //     <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+// //     <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+// //     <div className="random" style={{backgroundColor:`${random()}` }}>{random()}</div>
+// //   </div>
+
+// // )
+
+// const Course = () => (<h1>30 Days of React</h1>)
+// const Title = () => ( <h2>Hexidecimal Color</h2>)
+
+// const App=()=>(
+//   <div className='app'>
+//     <div>
+//       <Course/>
+//       <Title/>
+//     </div>
+//     <div className='color'>
+//       <ArrColor/>
+//     </div>
 //   </div>
-
 // )
+// const rootElement=document.getElementById('root');
+// ReactDOM.render(<App/>,rootElement);
 
-const Course = () => (<h1>30 Days of React</h1>)
-const Title = () => ( <h2>Hexidecimal Color</h2>)
+import { useState } from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
+import NoPage from "./pages/NoPage";
+import Todos from "./Todos";
+import './App.css';
 
-const App=()=>(
-  <div className='app'>
-    <div>
-      <Course/>
-      <Title/>
-    </div>
-    <div className='color'>
-      <ArrColor/>
-    </div>
-  </div>
-)
-const rootElement=document.getElementById('root');
-ReactDOM.render(<App/>,rootElement);
+const Header = () =>{
+  return (
+    <>
+      {/* <h1 style={{header}}>Hello Style!</h1> */}
+      <p>Try out my own style</p>
+    </>
+  );
+}
+
+export default function App() {
+  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState(["todo 1", "todo 2"]);
+
+  const increment = ()=>{
+    setCount((c)=>c+1);
+  }
+
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="blogs" element={<Blogs />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+      <Header />
+      <Todos todos={todos}/>
+      <hr/>
+      <div>
+        Count: {count}
+        <button onClick={increment}>+</button>
+      </div>
+    </>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
